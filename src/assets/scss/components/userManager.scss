@@ -1,0 +1,98 @@
+@import "../variable.scss";
+.userManager {
+  background: $cl-gray;
+  .mennuUser {
+    background: $cl-gray;
+    border: 10px $cl-gray solid;
+    border-left: none;
+    .contentMennu {
+      background: $cl-default;
+      padding: 0 1rem;
+    }
+    .titleMennu {
+      height: 60px;
+      padding-top: 1rem;
+      span {
+        .fa-user-astronaut {
+          height: 40px;
+          width: 40px;
+          color: $cl-red;
+          background: $cl-pink;
+          border: $cl-pink 1px solid;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 10px;
+        }
+      }
+      .fa-sign-out-alt {
+        color: gray;
+        font-size: 2rem;
+      }
+    }
+    .bodyMennu {
+      height: 46px;
+      border: 1px gray dashed;
+      border-radius: 5px;
+      padding: 0 10px;
+      margin: 1rem 0;
+      i {
+        font-size: 1.5rem;
+        color: $cl-red;
+      }
+    }
+    .footerMennu {
+      margin-bottom: 10px;
+      .item {
+        color: gray;
+        i {
+          text-align: center;
+          font-size: 1.5rem;
+        }
+        span {
+          text-align: center;
+          font-size: 0.9rem;
+        }
+      }
+    }
+    nav {
+      .nav-item {
+        color: gray;
+        text-decoration: none;
+        margin: 5px 0;
+        height: 40px;
+        padding-left: 5px;
+        i {
+          font-size: 1.5rem;
+          width: 3rem;
+        }
+      }
+      .active {
+        background: $cl-pink;
+        color: $cl-red;
+        border: $cl-pink 1px solid;
+        border-radius: 5px;
+      }
+    }
+  }
+  .footer-userManager {
+    background: $cl-default;
+    padding: 2rem 0;
+    margin-top: 1rem;
+    .item-footer {
+      padding-left: 0;
+      padding-right: 0;
+      img {
+        height: 68px;
+        margin-right: 10px;
+      }
+      .body-footer {
+        font-size: 0.8rem;
+        .title {
+          font-weight: 550;
+        }
+      }
+    }
+  }
+}

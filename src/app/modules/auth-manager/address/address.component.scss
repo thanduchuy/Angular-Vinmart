@@ -1,0 +1,75 @@
+.addressUser {
+  border: #e8eaee 10px solid;
+  border-right: none;
+  border-left: none;
+  background: white;
+  padding: 1rem 20px;
+  .title {
+    border-bottom: 1px gray solid;
+    padding: 1rem 0;
+    h3 {
+      font-weight: 600;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      width: 13rem;
+      height: 40px;
+      background: #e53935;
+      border: 1px #e53935 solid;
+      border-radius: 5px;
+      opacity: 0.85;
+      i {
+        font-size: 1.2rem;
+        margin-right: 10px;
+      }
+      span {
+        font-size: 1rem;
+      }
+    }
+    a:hover {
+      opacity: 1;
+    }
+  }
+  .bodyAddress {
+    .itemAddress {
+      border: 1px gray solid;
+      padding: 1rem;
+      margin: 1rem 0;
+      i {
+        width: 2rem;
+      }
+      .name {
+        font-size: 0.9rem;
+        i {
+          color: #e53935;
+        }
+        span {
+          font-weight: 550;
+        }
+      }
+      .phone {
+        font-size: 0.9rem;
+      }
+      .address {
+        font-size: 0.9rem;
+        i {
+          color: #e53935;
+        }
+      }
+      .action {
+        button {
+          width: 59px;
+          height: 34px;
+          border: 1px gray solid;
+          border-radius: 5px;
+          margin: 0 5px;
+        }
+        button:hover {
+          background: #e53935;
+          color: white;
+        }
+      }
+    }
+  }
+}

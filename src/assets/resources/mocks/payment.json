@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "img": "/assets/img/payment/26892400459806.webp",
+      "title": "Thanh toán khi nhận hàng",
+      "content": "Quý khách sẽ thanh toán bằng tiền mặt hoặc thẻ khi Adayroi giao hàng.",
+      "active": false
+    },
+    {
+      "img": "/assets/img/payment/26892400853022.webp",
+      "title": "Thanh toán bằng ví điện tử MOMO",
+      "content": "Quý khách vui lòng cài app MoMo trước khi chọn hình thức này để thuận tiện cho việc thanh toán.",
+      "active": false
+    },
+    {
+      "img": "/assets/img/payment/26867594526750.webp",
+      "title": "Giảm 15% khi thanh toán bằng thẻ WOORI BANK",
+      "content": "Áp dụng lúc 09h00 thứ 2 và thứ 3 hàng tuần từ ngày 16/09/2019 đến 31/12/2019 Chi tiết chương trình tại đây",
+      "active": false
+    },
+    {
+      "img": "/assets/img/payment/26892400525342.webp",
+      "title": "Thanh toán bằng thẻ ATM",
+      "content": "Quý khách sẽ được chuyển tới Napas để thanh toán.",
+      "active": false
+    },
+    {
+      "img": "/assets/img/payment/26892400590878.webp",
+      "title": "Thanh toán bằng thẻ thanh toán quốc tế",
+      "content": "Quý khách sẽ được chuyển đến Onepay để thanh toán.",
+      "active": false
+    },
+    {
+      "img": "/assets/img/payment/26892400689182.webp",
+      "title": "Thanh toán trả góp",
+      "content": "Quý khách sẽ được chuyển sang Onepay để thanh toán.",
+      "active": false
+    }
+  ]
+}

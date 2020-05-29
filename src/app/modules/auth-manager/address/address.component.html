@@ -1,0 +1,146 @@
+<div class="addressUser">
+  <div class="title d-flex justify-content-between align-items-center">
+    <h3>Sổ địa chỉ</h3>
+    <a
+      class="d-flex justify-content-center align-items-center"
+      data-toggle="modal"
+      data-target="#exampleModal"
+      href=""
+    >
+      <i class="fas fa-plus"></i>
+      <span>Thêm địa chỉ mới</span>
+    </a>
+  </div>
+  <div class="bodyAddress">
+    <div class="itemAddress" *ngFor="let item of locals; let i = index">
+      <div class="name">
+        <i class="fas fa-user"></i>
+        <span>{{ item.name }}</span>
+      </div>
+      <div class="phone">
+        <i class="fas fa-mobile-alt"></i>
+        <span>{{ item.phone }}</span>
+      </div>
+      <div
+        class="addressAction d-flex justify-content-between align-items-center"
+      >
+        <div class="address">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>{{ item.address }},{{ item.addressCorporeal }}</span>
+        </div>
+        <div class="action">
+          <button (click)="onRemoveLocation(i)">Xoá</button>
+          <button
+            (click)="onUpdateLocation(i)"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            Sửa
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ title }} địa chỉ mới
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <form action="" class="d-flex flex-column" [formGroup]="formGroup">
+          <label>Họ và tên <i>*</i></label>
+          <input
+            type="text"
+            placeholder="Ví dụ: Thân Đức H"
+            formControlName="name"
+          />
+          <label>Điện thoại <i>*</i></label>
+          <input
+            type="text"
+            placeholder="Ví dụ: 038XXXXXXX"
+            formControlName="phone"
+          />
+          <label>Email</label>
+          <input
+            type="text"
+            placeholder="Ví dụ: duchuy@gmail.com"
+            formControlName="email"
+          />
+          <label>Thành phố</label>
+          <select
+            name=""
+            id=""
+            (change)="onChangeCity()"
+            formControlName="city"
+          >
+            <option
+              *ngFor="let item of datacitys"
+              value="{{ item.code }},{{ item.name }}"
+            >
+              {{ item.name }}
+            </option>
+          </select>
+          <label>Quận huyện</label>
+          <select
+            name=""
+            id=""
+            (change)="onChangeDistict()"
+            formControlName="distict"
+          >
+            <option
+              *ngFor="let item of dataDistict"
+              value="{{ item.code }},{{ item.name }}"
+            >
+              {{ item.name }}
+            </option>
+          </select>
+          <label>Phường</label>
+          <select name="" id="" formControlName="ward">
+            <option *ngFor="let item of dataWard" value="{{ item.name }}">
+              {{ item.name }}
+            </option>
+          </select>
+          <label>Địa chỉ cụ thể <i>*</i></label>
+          <input
+            type="text"
+            placeholder="Ví dụ: k23/5"
+            formControlName="address"
+          />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="onClickAddress()"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          {{ title }} địa chỉ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

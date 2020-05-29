@@ -1,0 +1,43 @@
+.payments {
+  padding: 1rem 0;
+  .head {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .boday-payment {
+    border-bottom: 10px gray dashed;
+    .item-body {
+      border: 2px gray solid;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px 0;
+      img {
+        width: 48px;
+        height: 48px;
+        margin-right: 1rem;
+      }
+      .item-content {
+        font-size: 0.9rem;
+        p {
+          width: 500px;
+        }
+      }
+    }
+  }
+  .bot-payment {
+    margin: 1rem 0;
+    border: 2px gray solid;
+    border-radius: 5px;
+    padding: 1rem;
+    .fa-arrow-circle-left {
+      font-size: 2rem;
+      margin-right: 10px;
+    }
+  }
+  .bot-payment:hover {
+    background: #e53935;
+    border: 2px #e53935 solid;
+    color: white;
+  }
+}

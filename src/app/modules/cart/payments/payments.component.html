@@ -1,0 +1,21 @@
+<div class="payments">
+  <h6 class="head">Chọn hình thức thanh toán</h6>
+  <div class="boday-payment">
+    <div
+      class="item-body d-flex"
+      *ngFor="let item of payments; let i = index"
+      (click)="onActiveElement(i)"
+      [style.border-color]="item.active ? 'red' : 'gray'"
+    >
+      <img src="{{ item.img }}" alt="" srcset="" />
+      <div class="item-content">
+        <h6>{{ item.title }}</h6>
+        <p>{{ item.content }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="bot-payment d-flex align-items-center" (click)="onBack()">
+    <i class="fas fa-arrow-circle-left"></i
+    ><span>Quay lại thông tin giao hàng</span>
+  </div>
+</div>

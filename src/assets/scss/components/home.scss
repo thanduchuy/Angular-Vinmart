@@ -1,0 +1,66 @@
+@import "../variable.scss";
+.homepage {
+  background: $cl-gray;
+
+  .home-banner {
+    background: center no-repeat;
+    background-image: url("/assets/img/27004928884766.jpg");
+    background-size: cover;
+    height: 390px;
+    margin-bottom: 70px;
+    margin-top: 5px;
+  }
+  .selling-header {
+    background: center no-repeat;
+    background-size: cover;
+    height: 100px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+  .selling-body {
+    padding-top: 20px;
+    background: white;
+    .products {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .list-product {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+      .br {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 42px;
+        height: 32px;
+        border: #e8eaee 1px solid;
+        border-radius: 5px;
+      }
+      .br:hover {
+        background: gray;
+        border: gray 1px solid;
+        color: white;
+      }
+      .element-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border: #e8eaee 1px solid;
+        border-radius: 5px;
+        margin: 0 5px;
+      }
+      .element-list:hover {
+        background: $cl-red;
+        color: white;
+        border: $cl-red 1px solid;
+      }
+      .element-more {
+        border-radius: 50%;
+      }
+    }
+  }
+}

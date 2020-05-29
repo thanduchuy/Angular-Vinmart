@@ -1,0 +1,58 @@
+{
+  "data": {
+    "nav": [
+      {
+        "icon": "far fa-user-circle",
+        "title": "Thông tin tài khoản",
+        "url": "/authManager/userInfo",
+        "active": false
+      },
+      {
+        "icon": "far fa-credit-card",
+        "title": "Quản lý thẻ VinID",
+        "url": "/authManager/userVin",
+        "active": false
+      },
+      {
+        "icon": "fas fa-id-card-alt",
+        "title": "Đơn hàng của bạn",
+        "url": "/authManager/history",
+        "active": false
+      },
+      {
+        "icon": "far fa-clipboard",
+        "title": "Sổ địa chỉ",
+        "url": "/authManager/userAddress",
+        "active": false
+      },
+      {
+        "icon": "far fa-id-card",
+        "title": "Phương thức thanh toán",
+        "url": "/authManager/pay",
+        "active": false
+      }
+    ],
+    "introduce": [
+      {
+        "icon": "/assets/img/introduce/cart-footer-min.webp",
+        "title": "SẢN PHẨM CHẤT LƯỢNG",
+        "content": "Cam kết mang đến những sản phẩm hàng đầu."
+      },
+      {
+        "icon": "/assets/img/introduce/shipper-adayroi-min.webp",
+        "title": "GIAO HÀNG SIÊU TỐC",
+        "content": "Vận chuyển nhanh chóng, an toàn cho từng món hàng."
+      },
+      {
+        "icon": "/assets/img/introduce/five-star-min.webp",
+        "title": "DỊCH VỤ ĐẲNG CẤP",
+        "content": "Dịch vụ 5 sao, hậu mãi chuyên nghiệp"
+      },
+      {
+        "icon": "/assets/img/introduce/building-min.webp",
+        "title": "NHÀ CUNG CẤP UY TÍN",
+        "content": "Kết nối những nhà cung cấp tin cẩn đến với mọi khách hàng"
+      }
+    ]
+  }
+}

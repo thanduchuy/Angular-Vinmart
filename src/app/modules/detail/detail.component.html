@@ -1,0 +1,173 @@
+<div class="detailProduct">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 Image d-flex">
+        <div class="navImg">
+          <div
+            *ngFor="let item of images"
+            [ngStyle]="{
+              'background-image': 'url(' + item.url + ')'
+            }"
+            [ngClass]="item.isActive ? 'active imgItem' : 'imgItem'"
+            (mouseover)="activeItem(item)"
+          ></div>
+        </div>
+        <div class="parent">
+          <div
+            class="img"
+            [ngStyle]="{ 'background-image': 'url(' + image + ')' }"
+          ></div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="topDetail d-flex justify-content-between">
+          <span class="name">{{ item && item.name }}</span>
+          <span class="decoration d-flex justify-content-end">
+            <i class="fas fa-share-alt"></i>
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
+        <div class="bodyDetail d-flex flex-column">
+          <a href="#">Viết đánh giá cho sản phẩm này</a>
+          <div class="priceDetail d-flex flex-column">
+            <span class="price">{{ item && item.price_new }}đ</span>
+            <div class="vinDetail">
+              <img src="/assets/img/download.jpg" alt="" srcset="" />
+              <span
+                >Hoàn {{ item && item.vinid }}đ (3%) vào thẻ VinID
+                <i class="far fa-question-circle"></i
+              ></span>
+            </div>
+          </div>
+          <div class="endowDetail d-flex">
+            <label for="">Mã giảm giá </label>
+            <span
+              class="itemDendow d-flex align-items-center justify-content-center"
+              *ngFor="let item of endows"
+            >
+              {{ item }}
+            </span>
+          </div>
+          <div class="shipDetail d-flex">
+            <label for="">Giao hàng tới </label>
+            <div class="valueShip d-flex flex-column">
+              <span class="local">{{ local }}</span>
+              <p>
+                Giao từ 1 - 2 ngày làm việc - <u>12.000đ</u
+                ><i class="fas fa-question-circle"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="botDetail">
+          <div class="count d-flex align-items-center">
+            <span>Số lượng</span>
+            <div class="up-down d-flex">
+              <i
+                [ngClass]="
+                  number > 1
+                    ? 'fas fa-minus d-flex justify-content-center align-items-center'
+                    : 'fas fa-minus  hidden d-flex justify-content-center align-items-center'
+                "
+                (click)="onChange('minus')"
+              ></i>
+              <span class="d-flex justify-content-center align-items-center">{{
+                number
+              }}</span>
+              <i
+                class="fas fa-plus d-flex justify-content-center align-items-center"
+                (click)="onChange('plus')"
+              ></i>
+            </div>
+            <span>Mua tối đa 6 sản phẩm</span>
+          </div>
+          <div class="actiocDetail d-flex justify-content-between">
+            <button class="btnBuy" (click)="buyNow()">Mua ngay</button>
+            <button class="btnAdd" (click)="onAddCart()">
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footerDetail">
+  <div class="container">
+    <div class="row ">
+      <div class="col-xl-8 detailRate d-flex flex-column">
+        <h3 class="titleRate">Đánh giá sản phẩm</h3>
+        <div class="starRate d-flex">
+          <span class="star">
+            <i
+              *ngFor="let item of star; let i = index"
+              [ngClass]="item ? 'active fas fa-star' : 'fas fa-star'"
+              (click)="chooseStar(i)"
+            ></i>
+          </span>
+          <span class="decora">Chọn sao để đánh giá</span>
+        </div>
+        <form action="" class="d-flex flex-column" [formGroup]="myForm">
+          <h6>Viết đánh giá sản phẩm</h6>
+          <textarea
+            rows="3"
+            placeholder="Mời bạn viết đánh giá về sản phẩm này, vui lòng viết tiếng Việt có dấu....."
+            (keyup)="clickArea($event)"
+            (focus)="onShowName()"
+            formControlName="rate"
+          ></textarea>
+          <label
+            for=""
+            class="error"
+            *ngIf="
+              myForm.controls['rate'].invalid && myForm.controls['rate'].touched
+            "
+            >Vui lòng nhập nội dung bình luận</label
+          >
+          <input
+            type="text"
+            placeholder="Tên của bạn"
+            *ngIf="showName"
+            formControlName="name"
+          />
+          <label
+            *ngIf="
+              myForm.controls['name'].invalid && myForm.controls['name'].touched
+            "
+            for=""
+            class="error"
+            >Vui lòng nhập họ tên</label
+          >
+          <div
+            class="actionRate d-flex justify-content-between align-items-center"
+          >
+            <span>{{ count }}/500 ký tự</span>
+            <button
+              [disabled]="
+                myForm.controls['name'].invalid &&
+                myForm.controls['rate'].invalid
+              "
+              (click)="onSentRate()"
+            >
+              Gửi đánh giá
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-xl-4 policyDetail d-flex flex-column">
+        <div class="titlePolicy">
+          <h6>Chính sách Adayroi</h6>
+        </div>
+        <ul>
+          <li
+            *ngFor="let item of policys"
+            class="itemPolicy d-flex align-items-center"
+          >
+            <i class="{{ item.title }}"></i>
+            <span>{{ item.value }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

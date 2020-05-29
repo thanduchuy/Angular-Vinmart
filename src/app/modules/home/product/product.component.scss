@@ -1,0 +1,112 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+.product {
+  .product_image {
+    height: 223px;
+    background: no-repeat center;
+    background-size: cover;
+  }
+  .product_name {
+    font-size: 14px;
+  }
+  .price {
+    font-size: 15px;
+    .price_new {
+      color: #e53935;
+      font-weight: 600;
+    }
+    .price_old {
+      color: gray;
+      text-decoration: line-through;
+      margin-left: 0.5rem;
+    }
+    .discount {
+      margin-left: 0.5rem;
+      font-size: 11px;
+      background: #e53935;
+      color: white;
+      font-weight: 600;
+      padding-left: 5px;
+      padding-right: 5px;
+      border: 1px #e53935 solid;
+      border-radius: 5px;
+    }
+  }
+  .refund {
+    .vinid {
+      margin-bottom: 15px;
+      background: #e8eaee;
+      width: 160px;
+      height: 30px;
+      border: #e8eaee 1px solid;
+      border-radius: 5px;
+      img {
+        width: 35px;
+        height: 13px;
+        margin-right: 5px;
+      }
+      span {
+        font-size: 13px;
+      }
+    }
+  }
+  .fa-gifts {
+    color: #e53935;
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+    background: #ffece9;
+    border: #ffece9 1px solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .endow {
+    visibility: hidden;
+    justify-content: space-between;
+    align-items: center;
+    .endow-iten {
+      font-size: 12px;
+      color: #e53935;
+      border: 1px #e53935 dashed;
+      background: #ffece9;
+      padding: 0 5px;
+    }
+  }
+  .add-cart {
+    visibility: hidden;
+    color: white;
+    background: #e53935;
+    border: 1px #e53935 dashed;
+    border-radius: 5px;
+    height: 2rem;
+    margin: 20px 0;
+  }
+  .rate {
+    margin-bottom: 5px;
+    .fa-star {
+      font-size: 10px;
+      color: #f5a623;
+    }
+    .unActive {
+      color: gray;
+    }
+  }
+}
+.product:hover {
+  .endow {
+    visibility: visible;
+  }
+  .refund {
+    .visible {
+      visibility: hidden;
+    }
+  }
+  .add-cart {
+    visibility: visible;
+    justify-content: center;
+  }
+}

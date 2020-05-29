@@ -1,0 +1,134 @@
+@import "../variable.scss";
+.cart {
+  background: #f3f4f6;
+  padding: 1rem 0;
+  .row {
+    justify-content: space-between;
+    .col-xl-8 {
+      background: white;
+      max-width: 65%;
+      padding-bottom: 1rem;
+    }
+  }
+  .head-info {
+    padding-top: 1rem;
+    .count {
+      .count-title {
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+      }
+      .count-value {
+        font-size: 1.2rem;
+        color: gray;
+      }
+    }
+    .location {
+      font-size: 0.8rem;
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+  .shiper {
+    border: 1px gray solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    padding-inline-start: 1rem;
+    .title-shiper {
+      font-size: 0.8rem;
+      span {
+        font-weight: 600;
+      }
+    }
+    .body-shiper {
+      font-size: 0.8rem;
+      span {
+        font-weight: 600;
+        color: $cl-red;
+      }
+      .fa-question-circle {
+        color: gray;
+        margin-left: 5px;
+      }
+    }
+  }
+  .Billing-Information {
+    .form-cart {
+      padding: 1rem 1rem;
+      background: white;
+      h6 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .discount-code {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+
+        .fa-money-check-alt {
+          font-size: 1rem;
+          color: rgb(255, 187, 0);
+          margin-right: 5px;
+        }
+        .fa-question-circle {
+          font-size: 1rem;
+          color: gray;
+          margin-left: 5px;
+        }
+        .fa-sort-down {
+          font-size: 1rem;
+          margin-left: 5px;
+        }
+      }
+      .into-money {
+        color: gray;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+
+        .monney {
+          color: black;
+        }
+        .fee {
+          color: $cl-green;
+        }
+      }
+      .total-money {
+        font-size: 0.9rem;
+        .title {
+          font-size: 1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+        .monney {
+          color: $cl-red;
+          font-weight: 600;
+        }
+      }
+      .vat {
+        font-size: 0.7rem;
+        color: gray;
+        margin-bottom: 1rem;
+      }
+      .btn-cart {
+        color: white;
+        background: $cl-red;
+        border: 1px $cl-red solid;
+        border-radius: 5px;
+        height: 40px;
+      }
+    }
+  }
+  .vin-card {
+    margin-top: 2rem;
+    img {
+      height: 48px;
+      margin-right: 1rem;
+    }
+    span {
+      font-size: 0.75rem;
+    }
+  }
+}

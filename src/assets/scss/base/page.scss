@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container {
+    max-width: 1200px !important;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .container {
+    max-width: 1400px !important;
+  }
+}

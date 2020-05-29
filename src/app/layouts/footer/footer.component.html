@@ -1,0 +1,138 @@
+<div class="" *ngIf="hidden">
+  <footer>
+    <div class="container">
+      <div
+        class="row banner-footer"
+        [ngStyle]="{ 'background-image': 'url(' + background1 + ')' }"
+      ></div>
+      <div
+        class="row banner-footer"
+        [ngStyle]="{ 'background-image': 'url(' + background2 + ')' }"
+      ></div>
+      <div class="row commitment-footer">
+        <div class="col-xl-3" *ngFor="let item of commitment['header']">
+          <ul class="list-commitment">
+            <li *ngFor="let element of item">{{ element }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row title-assurance">
+        <h4>Vinmart - Nơi an tâm mua sắm</h4>
+      </div>
+    </div>
+    <div class="assurance">
+      <div class="container">
+        <div class="row body-assurance">
+          <div class="col-xl-3 d-flex" *ngFor="let item of commitment['body']">
+            <img class="img" src="{{ item['img'] }}" alt="" srcset="" />
+            <div class="value">
+              <h5>{{ item["title"] }}</h5>
+              <span>{{ item["content"] }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="promotion">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-3 promotion-information">
+            <h6>ĐĂNG KÝ NHẬN TIN KHUYẾN MÃI</h6>
+            <p>
+              Áp dụng cho khách hàng mới. Hãy nhận ưu đãi hấp dẫn từ Adayroi
+              nào!
+            </p>
+          </div>
+          <div class="col-xl-9 promotion-register d-flex">
+            <span class="price d-flex">
+              <i class="fas fa-gift"></i>
+              <span>TẶNG BẠN<br />GIFTCODE 100K</span>
+            </span>
+            <form action="" class="d-flex">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Nhập Email của bạn tại đây" />
+              </mat-form-field>
+              <span
+                [ngClass]="
+                  onMale
+                    ? 'active d-flex align-items-center'
+                    : 'non-active d-flex align-items-center'
+                "
+                (click)="onActive('male')"
+                >Nam</span
+              >
+              <span
+                [ngClass]="
+                  onFemale
+                    ? 'active d-flex align-items-center'
+                    : 'non-active d-flex align-items-center'
+                "
+                (click)="onActive('female')"
+                >Nữ</span
+              >
+              <button>Đăng ký ngay</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="end-footer">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-5-cols item-ad"
+            *ngFor="let item of commitment['footer']"
+          >
+            <h6>{{ item["title"] }}</h6>
+            <ul>
+              <li *ngFor="let element of item['list']">
+                <a href="{{ element['href'] }}"></a>{{ element["value"] }}
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-5-cols app">
+            <div class="contact d-flex">
+              <i class="fab fa-facebook-square"></i>
+              <i class="fab fa-instagram"></i>
+            </div>
+            <div class="dow-app">
+              <h6>TẢI APP ADAYROI</h6>
+              <a class="app-store d-flex" href="#">
+                <i class="fab fa-apple"></i>
+                <span>Tải về tại<br /><i>App Store</i></span>
+              </a>
+              <a class="app-store d-flex" href="#">
+                <i class="fab fa-google-play"></i>
+                <span>Tải về tại<br /><i>Google Play</i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="certification">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div
+          class="item-1"
+          style="background-image: url('/assets/img/dadangky-min.png');"
+        ></div>
+        <div
+          class="item-1"
+          style="background-image: url('/assets/img/dathongbao-min.png');"
+        ></div>
+        <div
+          class="item-2"
+          style="background-image: url('/assets/img/chong-gian-lan-hang-gia-BCT-min.png');"
+        ></div>
+        <span>
+          Mã số doanh nghiệp: 0104918404 do Sở Kế hoạch và Đầu tư TP. Hà Nội cấp
+          lần đầu ngày 20/09/2010. Trụ sở chính: Số 72 Lê Thánh Tôn, Phường Bến
+          Nghé, Quận 1, Thành phố Hồ Chí Minh, Việt Nam.© 2019 Bản quyền thuộc
+          về Công Ty Cổ Phần Dịch Vụ Thương Mại Tổng Hợp VinCommerce
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

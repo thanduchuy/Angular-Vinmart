@@ -1,0 +1,42 @@
+<div
+  class="product d-flex flex-column"
+  (mouseover)="changeImage()"
+  (mouseout)="resetImage()"
+>
+  <a
+    [routerLink]="['/detail/', uid + '*' + nameTable]"
+    routerLinkActive="router-link-active"
+  >
+    <div
+      class="product_image"
+      [ngStyle]="{ 'background-image': 'url(' + imgRoot + ')' }"
+    ></div>
+    <p class="product_name">{{ name }}</p>
+    <div class="price">
+      <span class="price_new">{{ price_newFormat }}đ</span>
+      <span class="price_old" *ngIf="price_old !== '0'"
+        >{{ price_oldFormat }}đ</span
+      >
+      <span class="discount" *ngIf="discount !== '0'">-{{ discount }}%</span>
+    </div>
+    <div class="rate" *ngIf="rate !== '0'">
+      <i
+        *ngFor="let item of star"
+        [ngClass]="item ? 'fas fa-star' : 'unActive fas fa-star'"
+      ></i>
+    </div>
+    <div class="refund d-flex" *ngIf="vinid !== '0'">
+      <div class="vinid d-flex align-items-center justify-content-center ">
+        <img src="/assets/img/download.jpg" alt="" />
+        <span>Hoàn {{ vinid }}đ</span>
+      </div>
+      <i class="fas fa-gifts visible"></i>
+    </div>
+    <div class="endow d-flex">
+      <i class="fas fa-gifts"></i>
+      <span class="endow-iten">Ưu đãi 5%</span>
+      <span class="endow-iten">Ưu đãi 6%</span>
+    </div>
+  </a>
+  <button class="add-cart" (click)="onSubmit()">Thêm vào giỏ hàng</button>
+</div>

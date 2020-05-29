@@ -1,0 +1,49 @@
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+::ng-deep .mat-form-field-infix {
+  border: 1px #e53935 solid;
+  border-radius: 5px;
+  width: 280px !important;
+}
+::ng-deep .mat-form-field-label {
+  padding-left: 1rem;
+}
+::ng-deep .mat-input-element {
+  height: 30px;
+}
+.col-xs-5-cols,
+.col-sm-5-cols,
+.col-md-5-cols,
+.col-lg-5-cols {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-xs-5-cols {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-5-cols {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-5-cols {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-5-cols {
+    width: 20%;
+    float: left;
+  }
+}

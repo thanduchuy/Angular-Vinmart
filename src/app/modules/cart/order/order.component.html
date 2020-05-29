@@ -1,0 +1,208 @@
+<div class="order">
+  <div class="address-order">
+    <div
+      class="title-address d-flex justify-content-between align-items-center"
+    >
+      <h6>Địa chỉ nhận hàng</h6>
+      <span data-toggle="modal" data-target="#exampleModal">
+        Thêm địa chỉ
+        <i class="fas fa-plus-circle"></i>
+      </span>
+    </div>
+    <div class="body-address-null" *ngIf="!isLocal">
+      <img src="/assets/img/images.jpeg" alt="" srcset="" />
+      <p>
+        Bạn chưa có địa chỉ nhận hàng<br />
+        Hãy thêm địa chỉ để Adayroi phục vụ Quý khách tốt nhất
+      </p>
+    </div>
+    <div class="body-address" *ngIf="isLocal">
+      <div
+        *ngFor="let item of locals; let i = index"
+        [ngClass]="
+          !item.active
+            ? 'address d-flex align-items-center'
+            : 'address active d-flex align-items-center'
+        "
+        (click)="chooseAddress(i)"
+      >
+        <span><i class="fas fa-map-marker-alt"></i></span>
+        <div class="content d-flex flex-column">
+          <span class="name">{{ item.name }} - {{ item.phone }}</span>
+          <span>{{ item.addressCorporeal }},{{ item.address }}</span>
+        </div>
+        <i class="far fa-trash-alt" (click)="onRemoveLocation(i)"></i>
+      </div>
+    </div>
+    <div class="foot-address d-flex justify-content-between">
+      <h6>Ghi chú giao hàng</h6>
+      <ul class="d-flex list-note">
+        <li
+          *ngFor="let item of notes; let i = index"
+          (click)="onClickNotes(i)"
+          [ngStyle]="{ 'border-color': item.active ? '#e53935' : '#8e9098' }"
+        >
+          {{ item.content }}
+        </li>
+      </ul>
+    </div>
+    <div class="alert-note-time" *ngIf="notes[0].active || notes[1].active">
+      Đơn hàng của bạn sẽ được Adayroi giao vào khung giờ này.
+    </div>
+    <div class="alert-note-more" *ngIf="notes[2].active">
+      <form [formGroup]="formGroup">
+        <textarea
+          formControlName="other"
+          name=""
+          id=""
+          placeholder="Ví dụ:Gọi điện trước khi tới"
+          (blur)="onTypeOther()"
+        ></textarea>
+      </form>
+    </div>
+  </div>
+  <div class="order-body">
+    <h6>Thời gian giao hàng dự kiến</h6>
+    <div class="title d-flex justify-content-between">
+      <div class="title-left">
+        <p>
+          <span class="deep">Adayroi Dịch Vụ </span> - Quận Thanh Xuân, Hà Nội
+        </p>
+        <span
+          >Giao trước <span class="deep">20:00</span> -
+          <span class="free">Miễn phí</span>
+          <i class="fas fa-question-circle"></i
+        ></span>
+      </div>
+      <div class="title-right">
+        <button mat-raised-button (click)="picker.open()">
+          <i class="far fa-clock"></i>Thay đổi
+        </button>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          placeholder="{{ dateNow | date: format }}"
+        />
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    </div>
+    <div class="item-products" *ngFor="let item of listCart">
+      <app-item
+        img="{{ item.img }}"
+        name="{{ item.name }}"
+        price="{{ item.price }}"
+        quanlity="{{ item.quanlity }}"
+        isOrder="true"
+      ></app-item>
+    </div>
+  </div>
+  <div class="foot-order d-flex justify-content-between">
+    <div class="title">
+      <mat-checkbox>Xuất hóa đơn cho đơn hàng </mat-checkbox>
+    </div>
+    <div class="body">
+      Thêm thông tin
+      <i class="fas fa-plus-circle"></i>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thêm địa chỉ mới</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <form action="" class="d-flex flex-column" [formGroup]="formGroup">
+          <label>Họ và tên <i>*</i></label>
+          <input
+            type="text"
+            placeholder="Ví dụ: Thân Đức H"
+            formControlName="name"
+          />
+          <label>Điện thoại <i>*</i></label>
+          <input
+            type="text"
+            placeholder="Ví dụ: 038XXXXXXX"
+            formControlName="phone"
+          />
+          <label>Email</label>
+          <input
+            type="text"
+            placeholder="Ví dụ: duchuy@gmail.com"
+            formControlName="email"
+          />
+          <label>Thành phố</label>
+          <select
+            name=""
+            id=""
+            (change)="onChangeCity()"
+            formControlName="city"
+          >
+            <option
+              *ngFor="let item of datacitys"
+              value="{{ item.code }},{{ item.name }}"
+            >
+              {{ item.name }}
+            </option>
+          </select>
+          <label>Quận huyện</label>
+          <select
+            name=""
+            id=""
+            (change)="onChangeDistict()"
+            formControlName="distict"
+          >
+            <option
+              *ngFor="let item of dataDistict"
+              value="{{ item.code }},{{ item.name }}"
+            >
+              {{ item.name }}
+            </option>
+          </select>
+          <label>Phường</label>
+          <select name="" id="" formControlName="ward">
+            <option *ngFor="let item of dataWard" value="{{ item.name }}">
+              {{ item.name }}
+            </option>
+          </select>
+          <label>Địa chỉ cụ thể <i>*</i></label>
+          <input
+            type="text"
+            placeholder="Ví dụ: k23/5"
+            formControlName="address"
+          />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="onClickAddress()"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          Thêm địa chỉ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

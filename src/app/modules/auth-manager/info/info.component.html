@@ -1,0 +1,234 @@
+<div class="infoUser">
+  <div class="title">
+    <h3>Thông tin tài khoản</h3>
+  </div>
+  <div class="row d-flex justify-content-around">
+    <div class="col-xl-6 personalInformation">
+      <div
+        class="headPersonal d-flex justify-content-between align-items-center"
+      >
+        <label>Thông tin cá nhân </label>
+        <a data-toggle="modal" data-target="#exampleModal" href="">Thay đổi</a>
+      </div>
+      <div class="itemPersonal name d-flex flex-column">
+        <label>Họ và tên</label>
+        <span>{{ user && user.name }}</span>
+      </div>
+      <div class="itemPersonal birthday d-flex flex-column">
+        <label>Ngày sinh</label>
+        <span>{{ user && user.birthDay }}</span>
+      </div>
+      <div class="itemPersonal gender d-flex flex-column">
+        <label>Giới tính</label>
+        <ng-container *ngFor="let item of genders">
+          <span *ngIf="item['active']">{{ item["value"] }}</span>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col-xl-6 securityInformation">
+      <div class="head">
+        <h3>Thông tin bảo mật</h3>
+      </div>
+      <div class="itemSecurity">
+        <label>Email</label>
+        <div class="content d-flex justify-content-between align-items-center">
+          <div class="value">
+            <i class="far fa-envelope"></i>
+            <span>{{ user && user.email }} </span>
+          </div>
+          <a data-toggle="modal" data-target="#exampleModal" href=""
+            >Thay đổi</a
+          >
+        </div>
+      </div>
+      <div class="itemSecurity">
+        <label>Số điện thoại</label>
+        <div class="content d-flex justify-content-between align-items-center">
+          <div class="value">
+            <i class="fas fa-mobile"></i>
+            <span>{{ user && user.phone }}</span>
+          </div>
+          <a data-toggle="modal" data-target="#exampleModal" href=""
+            >Thay đổi</a
+          >
+        </div>
+      </div>
+      <div class="passSecurity d-flex flex-column">
+        <label>Mật khẩu</label>
+        <button
+          class="d-flex  justify-content-between align-items-center"
+          data-toggle="modal"
+          data-target="#modalPassword"
+        >
+          <span>
+            <i class="fas fa-lock"></i>
+            Đổi mật khẩu
+          </span>
+          <i class="fas fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- change Password -->
+<div
+  class="modal fade"
+  id="modalPassword"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Thay đổi mật khẩu
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form
+        class="modal-body d-flex flex-column"
+        [formGroup]="formChangePassword"
+      >
+        <p>
+          Hãy đặt một mật khẩu mạnh và không nên sử dụng lại nó cho các tài
+          khoản khác
+        </p>
+        <input
+          type="password"
+          placeholder="Mật khẩu hiện tại"
+          formControlName="passOld"
+        />
+        <label
+          *ngIf="
+            formChangePassword.controls['passOld'].invalid &&
+            formChangePassword.controls['passOld'].touched
+          "
+          >Mật khẩu hiện tại không được để trống</label
+        >
+        <input
+          type="password"
+          placeholder="Mật khẩu mới"
+          formControlName="passNew"
+        />
+        <label
+          *ngIf="
+            formChangePassword.controls['passNew'].invalid &&
+            formChangePassword.controls['passNew'].touched
+          "
+          >Vui lòng nhập mật khẩu</label
+        >
+        <p class="alertPassword">
+          Mật khẩu yêu cầu ít nhất 6 ký tự bao gồm cả chữ và số
+        </p>
+      </form>
+      <div class="modal-footer d-flex flex-column ">
+        <button
+          type="button"
+          class="btnChange"
+          (click)="onChangePassword()"
+          [ngStyle]="{
+            opacity:
+              (formChangePassword.controls['passOld'].invalid &&
+                formChangePassword.controls['passOld'].touched) ||
+              (formChangePassword.controls['passNew'].invalid &&
+                formChangePassword.controls['passNew'].touched)
+                ? '0.6'
+                : '1'
+          }"
+        >
+          Đổi ngay
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- form Update User -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content updateInfo">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Cập nhật thông tin cá nhân
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" class="d-flex flex-column" [formGroup]="formUpdateInfo">
+          <div class="updateGender d-flex justify-content-center">
+            <ng-container *ngFor="let item of genders">
+              <div
+                class="itemGender d-flex flex-column align-items-center justify-content-center"
+                [ngStyle]="{ 'border-color': item['active'] ? 'red' : 'gray' }"
+                (click)="onClickGender(item['value'])"
+              >
+                <img src="{{ item['img'] }}" alt="" srcset="" />
+                <span>{{ item["value"] }}</span>
+              </div>
+            </ng-container>
+          </div>
+          <label>Họ và tên</label>
+          <input
+            type="text"
+            value="{{ user && user.name }}"
+            formControlName="name"
+          />
+          <label>Số điện thoại</label>
+          <input
+            type="text"
+            value="{{ user && user.phone }}"
+            formControlName="phone"
+          />
+          <label>Ngày sinh</label>
+          <div class="selectBirthday d-flex justify-content-between">
+            <select
+              name=""
+              id=""
+              *ngFor="let item of dates"
+              formControlName="{{ item.control }}"
+            >
+              <option
+                value="{{ element }}"
+                *ngFor="let element of item.value"
+                >{{ element }}</option
+              >
+            </select>
+          </div>
+          <span
+            *ngIf="
+              formUpdateInfo.controls['day'].invalid ||
+              formUpdateInfo.controls['month'].invalid ||
+              formUpdateInfo.controls['year'].invalid
+            "
+            >Vui lòng cập nhật ngày sinh</span
+          >
+          <button (click)="onChangeInfo()">Lưu thông tin</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

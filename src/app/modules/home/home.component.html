@@ -1,0 +1,65 @@
+<div class="homepage">
+  <div class="home-banner"></div>
+  <div class="container" *ngFor="let item of dataRoot">
+    <div
+      class="row selling-header"
+      [ngStyle]="{ 'background-image': 'url(' + item.img + ')' }"
+    ></div>
+    <div class="row selling-body">
+      <mat-tab-group>
+        <mat-tab *ngFor="let element of item.key" label="{{ element }}">
+          <div class="row products">
+            <div class="col-lg-5-cols" *ngFor="let po of item.data[element]">
+              <app-product
+                discount="{{ po.discount }}"
+                img="{{ po.img }}"
+                img_hover="{{ po.img_hover }}"
+                imgRoot="{{ po.img }}"
+                name="{{ po.name }}"
+                price_new="{{ po.price_new }}"
+                price_old="{{ po.price_old }}"
+                vinid="{{ po.vinid }}"
+                rate="{{ po.rate }}"
+                nameTable="{{ item.nameTable }}"
+                uid="{{ po.uid }}"
+                (onAddCart)="onAddCart($event)"
+              ></app-product>
+            </div>
+          </div>
+          <div class="row list-product">
+            <div class="element">
+              <i class="fas fa-chevron-left br"></i>
+            </div>
+            <div class="element-list">
+              1
+            </div>
+            <div class="element-list">
+              2
+            </div>
+            <div class="element-list">
+              3
+            </div>
+            <div class="element-list">
+              4
+            </div>
+            <div class="element-list">
+              5
+            </div>
+            <div class="element-list">
+              6
+            </div>
+            <div class="element-list element-more">
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="element-list">
+              13
+            </div>
+            <div class="element">
+              <i class="fas fa-chevron-right br"></i>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

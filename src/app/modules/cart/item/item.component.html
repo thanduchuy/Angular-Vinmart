@@ -1,0 +1,38 @@
+<div class="itemOfCart d-flex">
+  <div
+    class="img-item"
+    [ngStyle]="{ 'background-image': 'url(' + img + ')' }"
+  ></div>
+  <div class="body-item d-flex flex-column">
+    <span class="name-item">{{ name }}</span>
+    <span class="price-item">{{ priceFormat }}đ</span>
+    <div class="item-action d-flex justify-content-end">
+      <button *ngIf="!check" class="btn-delete" (click)="onDelete()">
+        <i class="far fa-trash-alt"></i>
+      </button>
+      <div *ngIf="!check" class="up-down d-flex">
+        <i
+          [ngClass]="
+            number > 1
+              ? 'fas fa-minus d-flex justify-content-center align-items-center'
+              : 'fas fa-minus  hidden d-flex justify-content-center align-items-center'
+          "
+          (click)="onChange('minus')"
+        ></i>
+        <span class="d-flex justify-content-center align-items-center">{{
+          number
+        }}</span>
+        <i
+          class="fas fa-plus d-flex justify-content-center align-items-center"
+          (click)="onChange('plus')"
+        ></i>
+      </div>
+      <div
+        *ngIf="check"
+        class="quanlity d-flex justify-content-center align-items-cente"
+      >
+        X{{ number }}
+      </div>
+    </div>
+  </div>
+</div>

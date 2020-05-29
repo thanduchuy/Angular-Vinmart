@@ -1,0 +1,465 @@
+<div class="" *ngIf="hidden">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 header_location">
+          <div class="dropdown">
+            <button
+              class="btn dropdown"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Khu vực của bạn</span>
+              <span class="local">{{ local }}</span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="location-now dropdown-item">
+                <div class="d-flex quit-location">
+                  <span>Khu vực bạn chọn hiện tại</span>
+                  <a href="#"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="d-flex">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <p class="local">{{ local }}</p>
+                </div>
+              </div>
+              <span class="dropdown-item">Khu vực của bạn</span>
+              <form action="" class="dropdown-item" [formGroup]="formGroup">
+                <mat-form-field>
+                  <mat-label>Thành Phố</mat-label>
+                  <mat-select
+                    formControlName="city"
+                    (selectionChange)="onChangeCity()"
+                  >
+                    <mat-option
+                      *ngFor="let item of datacitys"
+                      [value]="item.code + ',' + item.name"
+                    >
+                      {{ item.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Quận/Huyện</mat-label>
+                  <mat-select
+                    formControlName="distict"
+                    (selectionChange)="onChangeDistict()"
+                  >
+                    <mat-option
+                      *ngFor="let item of dataDistict"
+                      [value]="item.code + ',' + item.name"
+                    >
+                      {{ item.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Phường</mat-label>
+                  <mat-select formControlName="ward">
+                    <mat-option
+                      *ngFor="let item of dataWard"
+                      [value]="item.name"
+                    >
+                      {{ item.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <button mat-button (click)="onChangeLoction()">Chọn</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 header_ad">
+          <div class="row">
+            <div class="col-xl-4 normal">Bán hàng cùng Adayroi</div>
+            <div class="col-xl-4 normal">Giảm thêm tới 3% khi có VinID</div>
+            <div class="col-xl-4 drop">
+              <div class="dropdown">
+                <button
+                  class="btn dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Hỗ trợ 1900 1901
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="d-flex hotline dropdown-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>
+                      Hotline<br />
+                      <span>19001901</span>
+                    </p>
+                  </div>
+                  <a class="dropdown-item link" href="#">
+                    <span>Câu hỏi thường gặp</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                  <a class="dropdown-item link" href="#">
+                    <span>Hướng dẫn đổi trả hàng</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                  <a class="dropdown-item link" href="#">
+                    <span>Chính sách thanh toán</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                  <a class="dropdown-item link" href="#">
+                    <span>Chính sách giao hàng</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                  <a class="dropdown-item link" href="#">
+                    <span>Liên hệ Adayroi</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                  <a class="dropdown-item link" href="#">
+                    <span>Đăng ký mở gian hàng</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="mennu-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="row">
+            <div class="col-xl-3 logo">
+              <a [routerLink]="['/home']" routerLinkActive="router-link-active">
+                <img
+                  src="/assets/img/logoadayroi.jpg"
+                  alt=""
+                  srcset=""
+                  class="mennu-icon"
+                />
+              </a>
+            </div>
+            <div class="col-xl-2 category">
+              <div class="dropdown">
+                <button
+                  class=" d-flex dropdown"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-list"></i>
+                  <span>Danh mục</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="d-flex">
+                    <div class="">
+                      <a class="dropdown-item" href="#">Ẩm thực-Spa-Dịch vụ</a>
+                      <a class="dropdown-item" href="#">Du lịch-Vinpearl</a>
+                      <a class="dropdown-item" href="#">Vé máy bay-Đặt chỗ</a>
+                      <a class="dropdown-item" href="#">Sức khỏe-Bảo hiểm</a>
+                      <a class="dropdown-item" href="#">Tivi-Camera-Âm thanh</a>
+                      <a class="dropdown-item" href="#"
+                        >Điện lạnh-Điện gia dụng</a
+                      >
+                      <a class="dropdown-item" href="#"
+                        >Điện thoại-Máy tính bảng</a
+                      >
+                      <a class="dropdown-item" href="#">Laptop-Thiết bị số</a>
+                      <a class="dropdown-item" href="#">Thực phẩm</a>
+                      <a class="dropdown-item" href="#">Nhà cửa</a>
+                      <a class="dropdown-item" href="#">Thời trang</a>
+                      <a class="dropdown-item" href="#">Làm đẹp-Sức khỏe</a>
+                      <a class="dropdown-item" href="#">Mẹ bé</a>
+                      <a class="dropdown-item" href="#">Ô tô-Xe máy-Phụ kiện</a>
+                      <a class="dropdown-item" href="#">Thể thao-Dã ngoại</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-7 form-mennu">
+              <div class="row d-flex">
+                <div class="col-xl-10">
+                  <form [formGroup]="formGroup">
+                      <mat-form-field class="example-full-width">
+                          <input
+                            matInput
+                            formControlName="ipSearch"
+                            placeholder="Tìm sản phẩm,thương hiệu và danh mục"
+                          />
+                        </mat-form-field>
+                  </form>
+                </div>
+                <div class="col-xl-2">
+                  <button mat-button (click)="onFindProduct()">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 application-header">
+          <div class="dropdown singin" *ngIf="!checkLogin">
+            <a
+              class="btn dropdown"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="far fa-user-circle"></i><span>Đăng nhập / Đăng ký</span>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item fb" href="#">
+                <i class="fab fa-facebook-square"></i>
+                <span>Đăng nhập bằng Facebook</span>
+              </a>
+              <a class="dropdown-item gg" href="#">
+                <i class="fab fa-google"></i>
+                <span>Đăng nhập bằng Google</span>
+              </a>
+              <a class="dropdown-item divider" href="#"
+                ><h2><span>Hoặc</span></h2></a
+              >
+              <button class="dropdown-item btn-singon" mat-button>
+                <a
+                  [routerLink]="['/login/login']"
+                  routerLinkActive="router-link-active"
+                  >Đăng nhập</a
+                >
+              </button>
+              <button class="dropdown-item btn-singin" mat-button>
+                <a
+                  [routerLink]="['/login/regis']"
+                  routerLinkActive="router-link-active"
+                  >Đăng ký</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="dropdown authManager" *ngIf="checkLogin">
+            <a
+              class="btn dropdown"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="far fa-user-circle"></i><span>{{ emailChage }}</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a
+                class="dropdown-item d-flex align-items-center"
+                href="#"
+                [routerLink]="['/authManager/userInfo']"
+                routerLinkActive="router-link-active"
+                ><i class="fas fa-user"></i>Thông tin tài khoản</a
+              >
+              <a
+                class="dropdown-item d-flex align-items-center"
+                [routerLink]="['/authManager/userVin']"
+                ><i class="fas fa-id-card"></i>Quản lý thẻ VinID</a
+              >
+              <a
+                class="dropdown-item d-flex align-items-center"
+                [routerLink]="['/authManager/history']"
+                routerLinkActive="router-link-active"
+                ><i class="far fa-address-card"></i>Đơn hàng của bạn</a
+              >
+              <a
+                class="dropdown-item d-flex align-items-center"
+                [routerLink]="['/authManager/userAddress']"
+                routerLinkActive="router-link-active"
+                ><i class="fas fa-book-dead"></i>Sổ địa chỉ</a
+              >
+              <a
+                class="dropdown-item d-flex align-items-center"
+                [routerLink]="['/authManager/pay']"
+                ><i class="far fa-credit-card"></i>Phương thức thanh toán</a
+              >
+              <a
+                class="dropdown-item d-flex align-items-center"
+                routerLinkActive="router-link-active"
+                (click)="onLogOut()"
+              >
+                <i class="fas fa-sign-out-alt"></i>Đăng xuất
+              </a>
+            </div>
+          </div>
+          <div class="dropdown dropleft vingroup">
+            <a
+              class="btn dropdown"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fab fa-studiovinari"></i>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item logo-vin" href="#">
+                <span>Hệ sinh thái của Vingroup</span>
+                <img src="/assets/img/company/vingroup.png" alt="" srcset="" />
+              </a>
+              <a class="dropdown-item" href="#">
+                <div class="row">
+                  <div class="col-xl-4 icons" *ngFor="let item of imgs">
+                    <img src="{{ item }}" alt="" srcset="" />
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="dropdown header-cart">
+            <a
+              class="btn dropdown"
+              [routerLink]="['/cart']"
+              routerLinkActive="router-link-active"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span
+                ><i class="fas fa-cart-arrow-down"></i>-{{ sizeListCart }}</span
+              >
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="dropdownMenuLink"
+            >
+              <div class="dropdown-item" *ngIf="sizeListCart < 1">
+                <img src="/assets/img/images.png" alt="" srcset="" />
+                <span>Bạn chưa có sản phẩm trong giỏ hàng</span>
+              </div>
+              <div class="dropdown-item" *ngIf="sizeListCart >= 1">
+                <app-item-cart
+                  *ngFor="let item of listCart"
+                  img="{{ item.img }}"
+                  name="{{ item.name }}"
+                  price="{{ item.price }}"
+                  quanlity="{{ item.quanlity }}"
+                  (deleteEvent)="deleteItemOfCart($event)"
+                ></app-item-cart>
+                <div
+                  class="total d-flex justify-content-between align-items-center"
+                >
+                  <span>Thành tiền</span>
+                  <span class="price">{{ total }}đ</span>
+                </div>
+                <a
+                  [routerLink]="['/cart']"
+                  class="btn-goCart d-flex justify-content-center align-items-center"
+                  >Xem giỏ hàng</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="caterogy-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4 logo-vinmart">
+          <a [routerLink]="['/home']" routerLinkActive="router-link-active">
+            <img src="/assets/img/13128287879198.png" alt="" />
+          </a>
+        </div>
+        <div class="col-xl-8">
+          <div class="row affirmatives">
+            <div class="col-xl-2 d-flex affirmative">
+              <img
+                src="/assets/img/category/13128288272414.png"
+                alt=""
+                srcset=""
+              />
+              <span>Sản phẩm an toàn</span>
+            </div>
+            <div class="col-xl-2 d-flex affirmative">
+              <img
+                src="/assets/img/category/13128288469022.png"
+                alt=""
+                srcset=""
+              />
+              <span
+                >Chất lượng<br />
+                cam kết</span
+              >
+            </div>
+            <div class="col-xl-2 d-flex affirmative">
+              <img
+                src="/assets/img/category/13128288665630.png"
+                alt=""
+                srcset=""
+              />
+              <span
+                >Dịch vụ<br />
+                vượt trội</span
+              >
+            </div>
+            <div class="col-xl-2 d-flex affirmative">
+              <img
+                src="/assets/img/category/13128288862238.png"
+                alt=""
+                srcset=""
+              />
+              <span
+                >Hotline<br />
+                <label>1900 1901</label>
+              </span>
+            </div>
+            <a href="#" class="col-xl-4">
+              <div class="map d-flex">
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >Tìm địa chỉ<br />
+                  63 siêu thị Vinmart
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="classify">
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let item of classify" class="dropdown">
+          <button class="btn dropdown" type="button" data-toggle="dropdown">
+            {{ item.name }}
+          </button>
+          <div class="{{ item.position }}">
+            <div class="row">
+              <a
+                class="col-xl-3 classify-element"
+                *ngFor="let element of item.list"
+                href="#"
+                >{{ element }}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "icon": "/assets/img/introduce/26892400459806.webp",
+      "head": "Thanh toán khi nhận hàng",
+      "value": "Quý khách sẽ thanh toán bằng tiền mặt hoặc thẻ khi Adayroi giao hàng.",
+      "active": false
+    },
+    {
+      "icon": "/assets/img/introduce/26892400525342.webp",
+      "head": "Thanh toán bằng thẻ ATM",
+      "value": "Quý khách sẽ được chuyển tới Napas để thanh toán.",
+      "active": false
+    },
+    {
+      "icon": "/assets/img/introduce/pcci.png",
+      "head": "",
+      "value": "Để đảm bảo an toàn, mọi thông tin thẻ của bạn khi thanh toán tại Adayroi được bảo mật bởi Cổng thanh toán OnePay - Đại diện của MiGS tại Việt Nam, đạt chứng chỉ chuẩn bảo mật thông tin PCI-DSS của PCI Security Standards Council. Tìm hiểu thêm",
+      "active": false
+    }
+  ]
+}

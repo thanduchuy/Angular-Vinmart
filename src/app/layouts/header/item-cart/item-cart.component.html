@@ -1,0 +1,16 @@
+<div class="item-cart d-flex">
+  <img src="{{ img }}" class="img-item" alt="" srcset="" />
+  <div class="body-item d-flex flex-column">
+    <div class="d-flex justify-content-between align-items-center">
+      <span class="name">{{ name }}đ</span>
+      <span><i (click)="onDelete()" class="fas fa-trash-alt"></i></span>
+    </div>
+
+    <div class="info d-flex justify-content-between align-items-center">
+      <span class="price">{{ priceFormat }}đ</span>
+      <span class="quanlity d-flex justify-content-center align-items-center"
+        >X{{ quanlity }}</span
+      >
+    </div>
+  </div>
+</div>

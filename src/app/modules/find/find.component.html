@@ -1,0 +1,90 @@
+<div class="findProduct">
+  <div class="container">
+    <h2>
+      Kết quả tìm kiếm <span>"{{ find }}"</span>
+    </h2>
+    <div class="row findProduct-mennu">
+      <div
+        class="col-xl-8 mennuFind d-flex align-items-center justify-content-between"
+      >
+        <span class="title">Sắp xếp theo:</span>
+        <ul class="mennuItem d-flex">
+          <li class="d-flex align-items-center justify-content-center">
+            Nổi bật
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            Giá rẻ
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            Giá cao
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            Bán chạy
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            Hàng mới
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            Xem nhiều
+          </li>
+        </ul>
+      </div>
+      <div
+        class="col-xl-4 d-flex align-items-center justify-content-around deco-mennu"
+      >
+        <span>Tìm thấy {{ totalProduct }} sản phẩm</span>
+        <form class="d-flex">
+          <button class="btn-pre" (click)="previousNav()">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <input
+            type="text"
+            disabled
+            class="d-flex align-items-center justify-content-center"
+            placeholder="{{ numberChoose }}/{{ numberNav.length }}"
+          />
+          <button class="btn-next" (click)="nextNav()">
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <ng-container *ngFor="let item of list; let i = index">
+      <div class="row" *ngIf="i + 1 === numberChoose">
+        <div class="col-xl-3" *ngFor="let element of item">
+          <app-product
+            discount="{{ element.discount }}"
+            img="{{ element.img }}"
+            img_hover="{{ element.img_hover }}"
+            imgRoot="{{ element.img }}"
+            name="{{ element.name }}"
+            price_new="{{ element.price_new }}"
+            price_old="{{ element.price_old }}"
+            vinid="{{ element.vinid }}"
+            rate="{{ element.rate }}"
+            nameTable="{{ element.table }}"
+            uid="{{ element.uid }}"
+            (onAddCart)="onAddCart($event)"
+          ></app-product>
+        </div>
+      </div>
+    </ng-container>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled" (click)="previousNav()">
+          <a class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li
+          *ngFor="let item of numberNav"
+          [ngClass]="item === numberChoose ? 'page-item active' : 'page-item'"
+          (click)="changeNav(item)"
+        >
+          <a class="page-link">{{ item }}</a>
+        </li>
+        <li class="page-item" (click)="nextNav()">
+          <a class="page-link">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

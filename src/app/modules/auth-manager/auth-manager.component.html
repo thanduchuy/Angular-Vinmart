@@ -1,0 +1,88 @@
+<div class="userManager">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 mennuUser">
+        <div class="contentMennu">
+          <div
+            class="titleMennu d-flex justify-content-between align-items-center"
+          >
+            <span class="d-flex justify-content-center align-items-center"
+              ><i class="fas fa-user-astronaut"></i>{{ email }}</span
+            >
+            <i class="fas fa-sign-out-alt d-flex"></i>
+          </div>
+          <div
+            class="bodyMennu d-flex justify-content-between align-items-center"
+          >
+            <span>Chưa kết nối thẻ VinID</span>
+            <i class="fab fa-vine"></i>
+          </div>
+          <div class="row footerMennu">
+            <div class="item col-xl-4 d-flex flex-column">
+              <i class="fas fa-truck-pickup"></i>
+              <span>Chờ nhận hàng</span>
+            </div>
+            <div class="item col-xl-4 d-flex flex-column">
+              <i class="fas fa-donate"></i>
+              <span>Mã giảm giá của bạn</span>
+            </div>
+            <div class=" item col-xl-4 d-flex flex-column">
+              <i class="far fa-heart"></i>
+              <span>Danh sách yêu thích</span>
+            </div>
+          </div>
+          <nav class="d-flex flex-column">
+            <a
+              *ngFor="let item of list"
+              class="nav-item d-flex align-items-center"
+              [ngClass]="
+                item.active
+                  ? 'nav-item active d-flex align-items-center'
+                  : 'nav-item d-flex align-items-center'
+              "
+              [routerLink]="[item.url]"
+              routerLinkActive="router-link-active"
+            >
+              <i class="{{ item.icon }}"></i>
+              <span>{{ item.title }}</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div
+        *ngIf="list[3] ? list[3].active : false"
+        class="col-xl-8 addressUser"
+      >
+        <app-address></app-address>
+      </div>
+      <div
+        *ngIf="list[2] ? list[2].active : false"
+        class="col-xl-8 historyUser"
+      >
+        <app-history></app-history>
+      </div>
+      <div *ngIf="list[0] ? list[0].active : false" class="col-xl-8 infoUser">
+        <app-info></app-info>
+      </div>
+      <div *ngIf="list[1] ? list[1].active : false" class="col-xl-8 infoUser">
+        <app-vin></app-vin>
+      </div>
+      <div *ngIf="list[4] ? list[4].active : false" class="col-xl-8 infoUser">
+        <app-pay></app-pay>
+      </div>
+    </div>
+  </div>
+  <div class="footer-userManager">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 item-footer d-flex" *ngFor="let item of footer">
+          <img src="{{ item.icon }}" alt="" srcset="" />
+          <div class="body-footer">
+            <div class="title">{{ item.title }}</div>
+            <div class="value">{{ item.content }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

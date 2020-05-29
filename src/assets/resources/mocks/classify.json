@@ -1,0 +1,86 @@
+{
+  "data": [
+    {
+      "name": "SỮA,KEM, PHÔ MAI",
+      "position": "dropdown-menu dropdown-menu-left",
+      "list": [
+        "SỮA NƯỚC",
+        "SỮA BỘT/ĐẶC",
+        "SỮA CHUA",
+        "KEM",
+        "PHÔ MAI",
+        "BƠ/MAGARINE"
+      ]
+    },
+    {
+      "name": "BÁNH KẸO, THỨC UỐNG",
+      "position": "dropdown-menu dropdown-menu-left",
+      "list": [
+        "Bánh Kẹo",
+        "Đồ Ăn Vặt - Snacks",
+        "Bia",
+        "Nước Giải Khát",
+        "Nước Khoáng",
+        "Nước Trái Cây",
+        "Trà",
+        "Cà Phê"
+      ]
+    },
+    {
+      "name": "THỰC PHẨM TƯƠI & ĐÔNG LẠNH",
+      "position": "dropdown-menu dropdown-menu-left",
+      "list": [
+        "Trái Cây",
+        "Rau Ăn Lá",
+        "Củ",
+        "Thịt",
+        "Thủy Hải Sản",
+        "Trứng",
+        "Thịt Đông Lạnh",
+        "Thịt Nguội",
+        "Thủy Hải Sản Đông Lạnh"
+      ]
+    },
+    {
+      "name": "THỰC PHẨM KHÔ",
+      "position": "dropdown-menu dropdown-menu-left",
+      "list": [
+        "Dầu Ăn",
+        "Gia Vị",
+        "Đường",
+        "Thực Phẩm Ăn Liền",
+        "Nông Sản Khô",
+        "Bánh Đa - Bánh Tráng",
+        "Gạo",
+        "Ngũ Cốc",
+        "Bột",
+        "Thịt Hộp",
+        "Cá Hộp",
+        "Rau Củ Đóng Hộp",
+        "Mật Ong - Mứt Phết"
+      ]
+    },
+    {
+      "name": "ĐỒ DÙNG GIA ĐÌNH",
+      "position": "dropdown-menu dropdown-menu-right",
+      "list": [
+        "Đồ Dùng Nhà Bếp",
+        "Đồ Dùng Vệ Sinh Nhà Cửa",
+        "Phụ Kiện Phòng Tắm",
+        "Bột Giặt, Nước Giặt",
+        "Nước Xả",
+        "Nước Rửa Chén, Lau Nhà"
+      ]
+    },
+    {
+      "name": "SỨC KHỎE - SẮC ĐẸP",
+      "position": "dropdown-menu dropdown-menu-right",
+      "list": [
+        "Chăm Sóc Tóc",
+        "Chăm Sóc Toàn Thân",
+        "Chăm Sóc Phụ Nữ",
+        "Mỹ Phẩm Dành Cho Nam"
+      ]
+    }
+  ]
+}

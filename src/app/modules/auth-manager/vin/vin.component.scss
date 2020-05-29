@@ -1,0 +1,78 @@
+.vin-user {
+  .row {
+    background: white;
+    border-top: 10px #e8eaee solid;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .connect-vin {
+    border-right: 1px #e8eaee solid;
+    padding: 2rem 10px;
+    font-size: 0.8rem;
+    .image {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 20rem;
+      }
+    }
+    h6 {
+      font-size: 0.8rem;
+      font-weight: 550;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .action {
+      button {
+        width: 9.9rem;
+        height: 2rem;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+      .btn-connect {
+        border-color: #ffece9;
+        background: #ffece9;
+        color: #e53935;
+      }
+      .btn-register {
+        border-color: #e53935;
+        background: #e53935;
+        color: white;
+      }
+    }
+  }
+  .interest-vin {
+    border-left: 1px #e8eaee solid;
+    padding: 2rem 10px;
+    .image {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 20rem;
+      }
+    }
+    h6 {
+      font-size: 0.8rem;
+      font-weight: 550;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .endow {
+      border: 1px #e8eaee solid;
+      margin-top: 1.5rem;
+      padding: 10px 0;
+      .item-endow {
+        font-size: 0.8rem;
+        padding: 10px;
+        .fa-check {
+          margin-right: 10px;
+          color: #1cbe55;
+        }
+      }
+    }
+  }
+}

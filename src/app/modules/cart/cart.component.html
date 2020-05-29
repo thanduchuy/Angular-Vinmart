@@ -1,0 +1,109 @@
+<div class="cart">
+  <div class="container">
+    <div class="row">
+      <div *ngIf="isCart" class="col-xl-8">
+        <div
+          class="head-info d-flex justify-content-between align-items-center"
+        >
+          <div class="count d-flex align-items-center">
+            <span class="count-title">Giỏ hàng của bạn</span>
+            <span class="count-value">{{ size }} sản phẩm</span>
+          </div>
+          <div class="location d-flex align-items-center">
+            <span>Khu vực của bạn: Quận Liên Chiểu, Đà Nẵng </span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+        <div class="shiper d-flex flex-column">
+          <div class="title-shiper">
+            <p><span>ADR-MAT ONG ZE</span> - Quận Liên Chiểu, Đà Nẵng</p>
+          </div>
+          <div class="body-shiper">
+            Giao hàng từ 1 - 2 ngày làm việc - <span>Miễn phí</span>
+            <i class="fas fa-question-circle"></i>
+          </div>
+        </div>
+        <div class="item-products" *ngFor="let item of list">
+          <app-item
+            img="{{ item.img }}"
+            name="{{ item.name }}"
+            price="{{ item.price }}"
+            quanlity="{{ item.quanlity }}"
+            isOrder="false"
+            (deleteEvent)="onDelete($event)"
+            (changeEvent)="onChange($event)"
+          ></app-item>
+        </div>
+      </div>
+      <div *ngIf="isOrder" class="col-xl-8">
+        <app-order
+          (onClickLocation)="onClickLocation($event)"
+          (onOther)="onClickOther($event)"
+          (onNotes)="onClickNotes($event)"
+        ></app-order>
+      </div>
+      <div *ngIf="isPayment" class="col-xl-8">
+        <app-payments
+          (back)="onBack($event)"
+          (onClickPayment)="onClickPayment($event)"
+        ></app-payments>
+      </div>
+      <div
+        class="col-xl-4 
+      Billing-Information
+      "
+      >
+        <div
+          class="form-cart d-flex
+        flex-column"
+        >
+          <h6>Thông tin thanh toán</h6>
+          <div
+            class="d-flex discount-code justify-content-between align-items-center"
+          >
+            <span
+              ><i class="fas fa-money-check-alt"></i>Sử dụng mã giảm giá<i
+                class="fas fa-question-circle"
+              ></i>
+            </span>
+            <span>Chọn mã của tôi<i class="fas fa-sort-down"></i></span>
+          </div>
+          <div
+            class="
+        into-money d-flex justify-content-between align-items-center"
+          >
+            <span>Thành tiền sản phẩm</span>
+            <span class="monney">{{ totalFormat }}đ</span>
+          </div>
+          <div
+            class=" 
+        into-money d-flex justify-content-between align-items-center"
+          >
+            <span>Phí vận chuyển (tạm tính)</span>
+            <span class="fee">Miễn phí</span>
+          </div>
+          <div
+            class="total-money d-flex justify-content-between align-items-center"
+          >
+            <span class="title">Tổng tiền</span>
+            <span class="monney">{{ totalFormat }}đ</span>
+          </div>
+          <span class="vat">Đã bao gồm thuế VAT</span>
+          <button class="btn-cart" (click)="changeToOrder()">
+            {{ valueButton }}
+          </button>
+        </div>
+        <div class="vin-card d-flex">
+          <img
+            src="https://www.adayroi.com/assets/images/vinid/vinid-card-48px.svg"
+            alt=""
+          />
+          <span
+            >Tài khoản VinID của Quý khách sẽ được tích điểm sau khi đơn hàng
+            được giao thành công</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

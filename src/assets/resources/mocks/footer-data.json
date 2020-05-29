@@ -1,0 +1,156 @@
+{
+  "data": {
+    "header": [
+      ["Sản phẩm chất lượng", "Cam kết mang đến những sản phẩm hàng đầu."],
+      [
+        "Giao hàng siêu tốc",
+        "Vận chuyển nhanh chóng, antoàn cho từng món hàng."
+      ],
+      ["Dịch vụ đẳng cấp", "Dịch vụ 5 sao, hậu mãi chuyên nghiệp"],
+      [
+        "Nhà cung cấp uy tín",
+        "Kết nối những nhà cung cấp tin cậy đến với mọi khách hàng."
+      ]
+    ],
+    "body": [
+      {
+        "img": "/assets/img/cart-footer-min.png",
+        "title": "SẢN PHẨM CHẤT LƯỢNG",
+        "content": "Cam kết mang đến những sản phẩm hàng đầu."
+      },
+      {
+        "img": "/assets/img/shipper-adayroi-min.png",
+        "title": "GIAO HÀNG SIÊU TỐC",
+        "content": "Vận chuyển nhanh chóng, an toàn cho từng món hàng."
+      },
+      {
+        "img": "/assets/img/five-star-min.png",
+        "title": "DỊCH VỤ ĐẲNG CẤP",
+        "content": "Dịch vụ 5 sao, hậu mãi chuyên nghiệp"
+      },
+      {
+        "img": "/assets/img/building-min.png",
+        "title": "NHÀ CUNG CẤP UY TÍN",
+        "content": "Kết nối những nhà cung cấp tin cẩn đến với mọi khách hàng"
+      }
+    ],
+    "footer": [
+      {
+        "title": "ADAYROI",
+        "list": [
+          {
+            "href": "#",
+            "value": "Giới thiệu"
+          },
+          {
+            "href": "#",
+            "value": "Tuyển dụng"
+          },
+          {
+            "href": "#",
+            "value": "Liên hệ"
+          },
+          {
+            "href": "#",
+            "value": "Quyền riêng tư"
+          },
+          {
+            "href": "#",
+            "value": "Bán hàng cùng Adayroi"
+          },
+          {
+            "href": "#",
+            "value": "Điều khoản & Điều kiện"
+          }
+        ],
+        "isSuport": false
+      },
+      {
+        "title": "TÀI KHOẢN",
+        "list": [
+          {
+            "href": "#",
+            "value": "Quản lý tài khoản"
+          },
+          {
+            "href": "#",
+            "value": "Giỏ hàng"
+          },
+          {
+            "href": "#",
+            "value": "Lịch sử đơn hàng"
+          },
+          {
+            "href": "#",
+            "value": "Mã giảm giá"
+          },
+          {
+            "href": "#",
+            "value": "Quản lý thẻ VinID"
+          }
+        ],
+        "isSuport": false
+      },
+      {
+        "title": "CHỦ ĐỀ HỖ TRỢ",
+        "list": [
+          {
+            "href": "#",
+            "value": "Câu hỏi thường gặp"
+          },
+          {
+            "href": "#",
+            "value": "Thanh toán"
+          },
+          {
+            "href": "#",
+            "value": "Tra cứu hóa đơn"
+          },
+          {
+            "href": "#",
+            "value": " Giao hàng"
+          },
+          {
+            "href": "#",
+            "value": " Tìm hiểu về VinID"
+          },
+          {
+            "href": "#",
+            "value": "Đổi trả và Bảo hành"
+          }
+        ],
+        "isSuport": true
+      },
+      {
+        "title": "Vingroup",
+        "list": [
+          {
+            "href": "#",
+            "value": "Siêu thị VinMart"
+          },
+          {
+            "href": "#",
+            "value": "Bệnh viện Vinmec"
+          },
+          {
+            "href": "#",
+            "value": "Nghỉ dưỡng VinPearl"
+          },
+          {
+            "href": "#",
+            "value": "Điện máy VinPro"
+          },
+          {
+            "href": "#",
+            "value": "Trường học Vinschool"
+          },
+          {
+            "href": "#",
+            "value": "Xem thêm..."
+          }
+        ],
+        "isSuport": false
+      }
+    ]
+  }
+}
